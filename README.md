@@ -3,6 +3,7 @@ Console-based social media application that simulates real-world social networki
 
 
 ### **Features**
+* **Authentication**
 * **User Management**
 * **Profile Customization**
 * **Social Content**
@@ -29,4 +30,4 @@ Console-based social media application that simulates real-world social networki
 * **Run**
 
 ### **Contributor**
-* **Ayithi Manikanta **
+* **Ayithi Manikanta**
