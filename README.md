@@ -3,28 +3,28 @@ Console-based social media application that simulates real-world social networki
 
 
 ### **Features**
-* **Authentication**
-* **User Management**
-* **Profile Customization**
-* **Social Content**
-* **Interactions**
-* **Networking**
-* **Messaging**
-* **Notifications**
+* Authentication
+* User Management
+* Profile Customization
+* Social Content
+* Interactions
+* Networking
+* Messaging
+* Notifications
 
 ### **Technologies Used**
-* **Java 21**
-* **MySQL**
-* **JDBC**
-* **Log4j2**
-* **JUnit 5**
+* Java 21
+* MySQL
+* JDBC
+* Log4j2
+* JUnit 5
 
 ### **Setup & Installation**
-* **Prerequisites**
-* **Database Setup**
-* **Database Config**
-* **Build**
-* **Run**
+* Prerequisites
+* Database Setup
+* Database Config
+* Build
+* Run
 
 ### **Contributor**
-* **Ayithi Manikanta**
+* Ayithi Manikanta
