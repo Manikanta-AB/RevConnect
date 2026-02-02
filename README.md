@@ -1,2 +1,2 @@
 # RevConnect
-Console-based social media application in Java featuring authentication, social connections, and content interactions. Uses MySQL, JDBC, JUnit, and Log4J to showcase real-world backend skills.
+Console-based social media application that simulates real-world social networking features. It allows users to create profiles, share posts, interact through likes and comments, and build connections.
