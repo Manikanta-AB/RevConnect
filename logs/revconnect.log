@@ -1,0 +1,119 @@
+2026-01-30 11:53:50,086 [INFO] service.UserService - Registering user: ayithimanikanta@gmail.com
+2026-01-30 11:53:50,657 [ERROR] dao.impl.UserDAOImpl - Error during registration
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at config.DBConnection.getConnection(DBConnection.java:15) ~[classes/:?]
+	at dao.impl.UserDAOImpl.registerUser(UserDAOImpl.java:77) [classes/:?]
+	at service.UserService.register(UserService.java:24) [classes/:?]
+	at app.RevConnect.register(RevConnect.java:870) [classes/:?]
+	at app.RevConnect.main(RevConnect.java:37) [classes/:?]
+2026-01-30 12:15:26,299 [INFO] service.UserService - Registering user: ayithimanikant@gmail.com
+2026-01-30 12:15:26,899 [ERROR] dao.impl.UserDAOImpl - Error during registration
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at config.DBConnection.getConnection(DBConnection.java:15) ~[classes/:?]
+	at dao.impl.UserDAOImpl.registerUser(UserDAOImpl.java:77) [classes/:?]
+	at service.UserService.register(UserService.java:24) [classes/:?]
+	at app.RevConnect.register(RevConnect.java:858) [classes/:?]
+	at app.RevConnect.main(RevConnect.java:34) [classes/:?]
+2026-01-30 12:18:37,920 [INFO] service.UserService - Registering user: 
+2026-01-30 12:18:38,525 [ERROR] dao.impl.UserDAOImpl - Error during registration
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at config.DBConnection.getConnection(DBConnection.java:15) ~[classes/:?]
+	at dao.impl.UserDAOImpl.registerUser(UserDAOImpl.java:77) [classes/:?]
+	at service.UserService.register(UserService.java:24) [classes/:?]
+	at app.RevConnect.register(RevConnect.java:858) [classes/:?]
+	at app.RevConnect.main(RevConnect.java:34) [classes/:?]
+2026-01-30 12:19:14,314 [INFO] service.UserService - Registering user: manikanta@gmail.com
+2026-01-30 12:19:14,354 [ERROR] dao.impl.UserDAOImpl - Error during registration
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at config.DBConnection.getConnection(DBConnection.java:15) ~[classes/:?]
+	at dao.impl.UserDAOImpl.registerUser(UserDAOImpl.java:77) [classes/:?]
+	at service.UserService.register(UserService.java:24) [classes/:?]
+	at app.RevConnect.register(RevConnect.java:858) [classes/:?]
+	at app.RevConnect.main(RevConnect.java:34) [classes/:?]
+2026-01-30 12:21:23,068 [INFO] service.UserService - Registering user: mani@gmail.com
+2026-01-30 12:21:23,101 [ERROR] dao.impl.UserDAOImpl - Error during registration
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at config.DBConnection.getConnection(DBConnection.java:15) ~[classes/:?]
+	at dao.impl.UserDAOImpl.registerUser(UserDAOImpl.java:77) [classes/:?]
+	at service.UserService.register(UserService.java:24) [classes/:?]
+	at app.RevConnect.register(RevConnect.java:858) [classes/:?]
+	at app.RevConnect.main(RevConnect.java:34) [classes/:?]
+2026-01-30 12:24:37,862 [INFO] service.UserService - Registering user: mani@gmail.com
+2026-01-30 12:24:37,891 [ERROR] dao.impl.UserDAOImpl - Error during registration
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(Unknown Source) ~[java.sql:?]
+	at config.DBConnection.getConnection(DBConnection.java:15) ~[classes/:?]
+	at dao.impl.UserDAOImpl.registerUser(UserDAOImpl.java:77) [classes/:?]
+	at service.UserService.register(UserService.java:24) [classes/:?]
+	at app.RevConnect.register(RevConnect.java:858) [classes/:?]
+	at app.RevConnect.main(RevConnect.java:34) [classes/:?]
+2026-01-30 12:46:40,382 [INFO] service.UserService - Registering user: mani@gmail.com
+2026-01-30 12:47:07,552 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-01-30 12:48:49,977 [INFO] service.UserService - Login attempt for email: manikanta@gmail.com
+2026-01-30 12:49:45,029 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-01-30 12:54:23,142 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-01-30 12:58:57,218 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-01-30 14:24:10,341 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-01-30 14:39:51,873 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-01-30 14:54:31,996 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-01-30 14:58:20,180 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-01-30 22:12:09,865 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-01 15:57:23,646 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-01 16:01:04,053 [INFO] service.UserService - Login attempt for email: manikanta@gmail.com
+2026-02-01 16:01:39,883 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-01 16:09:13,024 [INFO] service.UserService - Login attempt for email: mani@gamil.com
+2026-02-01 16:09:47,788 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-01 16:11:31,696 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-01 16:14:30,203 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-01 16:23:19,275 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-01 16:24:25,518 [INFO] service.UserService - Registering user: 
+2026-02-01 16:24:54,755 [INFO] service.UserService - Login attempt for email: 
+2026-02-01 16:26:55,306 [INFO] service.UserService - Login attempt for email: 
+2026-02-02 09:33:33,254 [INFO] service.UserService - Login attempt for email: mani@gmail.com

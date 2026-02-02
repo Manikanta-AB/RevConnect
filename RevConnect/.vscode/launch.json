@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run RevConnect",
+            "request": "launch",
+            "mainClass": "app.RevConnect",
+            "projectName": "revconnect",
+            "console": "integratedTerminal",
+            "classPaths": [
+                "${workspaceFolder}/target/classes",
+                "C:\\Users\\manikanta\\.m2\\repository\\com\\mysql\\mysql-connector-j\\8.0.33\\mysql-connector-j-8.0.33.jar",
+                "C:\\Users\\manikanta\\.m2\\repository\\org\\apache\\logging\\log4j\\log4j-api\\2.22.1\\log4j-api-2.22.1.jar",
+                "C:\\Users\\manikanta\\.m2\\repository\\org\\apache\\logging\\log4j\\log4j-core\\2.22.1\\log4j-core-2.22.1.jar"
+            ]
+        }
+    ]
+}
