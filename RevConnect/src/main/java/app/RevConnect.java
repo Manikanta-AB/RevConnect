@@ -788,7 +788,7 @@ public class RevConnect {
                         System.out.println("You are now following this account");
                     } else {
                         System.out.println(
-                                " You can follow only Creator or Business accounts (or already following)");
+                                " Already following this account or invalid User ID");
                     }
                 }
 

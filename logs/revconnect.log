@@ -120,3 +120,25 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 2026-02-02 15:51:41,790 [INFO] service.UserService - Login attempt for email: mani@gmail.com
 2026-02-02 16:18:01,751 [INFO] service.UserService - Login attempt for email: mani@gmail.com
 2026-02-02 16:25:25,135 [INFO] service.UserService - Login attempt for email: 
+2026-02-05 20:48:31,107 [INFO] service.UserService - Login attempt for email: 
+2026-02-05 20:49:27,641 [INFO] service.UserService - Registering user: mani@gmail.com
+2026-02-05 20:49:42,210 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-05 21:23:23,262 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-06 16:15:33,264 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-06 16:18:23,029 [INFO] service.UserService - Registering user: viratkohli@gmail.com
+2026-02-06 16:19:07,808 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-06 16:36:47,550 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-06 16:40:49,082 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-06 16:42:48,607 [INFO] service.UserService - Login attempt for email: virat@gmail.com
+2026-02-06 16:45:04,372 [INFO] service.UserService - Login attempt for email: virat@gmail.com
+2026-02-06 16:46:18,995 [INFO] service.UserService - Registering user: virat@gmail.com
+2026-02-06 16:46:40,013 [INFO] service.UserService - Login attempt for email: virat@gmail.com
+2026-02-06 16:47:29,507 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-06 16:49:21,097 [INFO] service.UserService - Login attempt for email: virat@gmail.com
+2026-02-07 10:01:32,384 [INFO] service.UserService - Login attempt for email: virat@gmail.com
+2026-02-07 10:04:58,543 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-07 10:09:18,361 [INFO] service.UserService - Login attempt for email: virat@gmail.com
+2026-02-07 10:12:57,257 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-07 10:15:28,822 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-09 16:42:30,505 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-09 16:56:13,190 [INFO] service.UserService - Login attempt for email: mani@gmail.com

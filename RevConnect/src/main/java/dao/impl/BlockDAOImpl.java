@@ -15,15 +15,20 @@ public class BlockDAOImpl implements BlockDAO {
     public boolean blockUser(int blockerId, int blockedId) {
 
         String sql = """
-            INSERT IGNORE INTO blocked_users (blocker_id, blocked_id)
-            VALUES (?, ?)
-        """;
+                    MERGE INTO blocked_users target
+                    USING (SELECT ? AS blocker_id, ? AS blocked_id FROM dual) source
+                    ON (target.blocker_id = source.blocker_id AND target.blocked_id = source.blocked_id)
+                    WHEN NOT MATCHED THEN
+                    INSERT (blocker_id, blocked_id) VALUES (source.blocker_id, source.blocked_id)
+                """;
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, blockerId);
             ps.setInt(2, blockedId);
+            ps.setInt(3, blockerId);
+            ps.setInt(4, blockedId);
             return ps.executeUpdate() > 0;
 
         } catch (Exception e) {
@@ -36,12 +41,12 @@ public class BlockDAOImpl implements BlockDAO {
     public boolean unblockUser(int blockerId, int blockedId) {
 
         String sql = """
-            DELETE FROM blocked_users
-            WHERE blocker_id = ? AND blocked_id = ?
-        """;
+                    DELETE FROM blocked_users
+                    WHERE blocker_id = ? AND blocked_id = ?
+                """;
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, blockerId);
             ps.setInt(2, blockedId);
@@ -57,12 +62,12 @@ public class BlockDAOImpl implements BlockDAO {
     public boolean isBlocked(int blockerId, int blockedId) {
 
         String sql = """
-            SELECT 1 FROM blocked_users
-            WHERE blocker_id = ? AND blocked_id = ?
-        """;
+                    SELECT 1 FROM blocked_users
+                    WHERE blocker_id = ? AND blocked_id = ?
+                """;
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, blockerId);
             ps.setInt(2, blockedId);
@@ -84,7 +89,7 @@ public class BlockDAOImpl implements BlockDAO {
         String sql = "SELECT blocked_id FROM blocked_users WHERE blocker_id = ?";
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, blockerId);
             ResultSet rs = ps.executeQuery();
@@ -99,4 +104,3 @@ public class BlockDAOImpl implements BlockDAO {
         return list;
     }
 }
-

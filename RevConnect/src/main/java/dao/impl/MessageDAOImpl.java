@@ -1,6 +1,5 @@
 package dao.impl;
 
-
 import config.DBConnection;
 import dao.MessageDAO;
 import model.Message;
@@ -15,12 +14,12 @@ public class MessageDAOImpl implements MessageDAO {
     public boolean sendMessage(int senderId, int receiverId, String message) {
 
         String sql = """
-            INSERT INTO messages (sender_id, receiver_id, message_text)
-            VALUES (?, ?, ?)
-        """;
+                    INSERT INTO messages (sender_id, receiver_id, message_text)
+                    VALUES (?, ?, ?)
+                """;
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, senderId);
             ps.setInt(2, receiverId);
@@ -40,14 +39,14 @@ public class MessageDAOImpl implements MessageDAO {
         List<Message> list = new ArrayList<>();
 
         String sql = """
-            SELECT * FROM messages
-            WHERE (sender_id = ? AND receiver_id = ?)
-               OR (sender_id = ? AND receiver_id = ?)
-            ORDER BY created_at
-        """;
+                    SELECT * FROM messages
+                    WHERE (sender_id = ? AND receiver_id = ?)
+                       OR (sender_id = ? AND receiver_id = ?)
+                    ORDER BY created_at
+                """;
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, userId);
             ps.setInt(2, otherUserId);
@@ -75,10 +74,10 @@ public class MessageDAOImpl implements MessageDAO {
     @Override
     public boolean markAsRead(int messageId) {
 
-        String sql = "UPDATE messages SET is_read = true WHERE message_id = ?";
+        String sql = "UPDATE messages SET is_read = 1 WHERE message_id = ?";
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, messageId);
             return ps.executeUpdate() > 0;
@@ -92,10 +91,10 @@ public class MessageDAOImpl implements MessageDAO {
     @Override
     public boolean markAsUnread(int messageId) {
 
-        String sql = "UPDATE messages SET is_read = false WHERE message_id = ?";
+        String sql = "UPDATE messages SET is_read = 0 WHERE message_id = ?";
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, messageId);
             return ps.executeUpdate() > 0;
@@ -110,13 +109,13 @@ public class MessageDAOImpl implements MessageDAO {
     public boolean deleteConversation(int userId, int otherUserId) {
 
         String sql = """
-            DELETE FROM messages
-            WHERE (sender_id = ? AND receiver_id = ?)
-               OR (sender_id = ? AND receiver_id = ?)
-        """;
+                    DELETE FROM messages
+                    WHERE (sender_id = ? AND receiver_id = ?)
+                       OR (sender_id = ? AND receiver_id = ?)
+                """;
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, userId);
             ps.setInt(2, otherUserId);

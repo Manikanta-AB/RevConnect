@@ -1,27 +1,19 @@
 package service;
 
-
-
 import dao.FollowerDAO;
 import dao.impl.FollowerDAOImpl;
 
 public class FollowerService {
 
     private FollowerDAO followerDAO = new FollowerDAOImpl();
-     NotificationService notificationService=new NotificationService();
-     UserService userService=new UserService();
+    NotificationService notificationService = new NotificationService();
+    UserService userService = new UserService();
+
     public boolean followUser(int followerId, int followingId) {
 
         // Cannot follow self
         if (followerId == followingId) {
             return false;
-        }
-
-        // Check user type
-        String userType = userService.getUserTypeById(followingId);
-
-        if (!"CREATOR".equals(userType) && !"BUSINESS".equals(userType)) {
-            return false; // ❌ personal account
         }
 
         boolean followed = followerDAO.follow(followerId, followingId);
@@ -30,8 +22,7 @@ public class FollowerService {
             notificationService.notify(
                     followingId,
                     "NEW_FOLLOWER",
-                    "You have a new follower"
-            );
+                    "You have a new follower");
         }
 
         return followed;
@@ -63,4 +54,3 @@ public class FollowerService {
     }
 
 }
-

@@ -1,7 +1,5 @@
 package dao.impl;
 
-
-
 import config.DBConnection;
 import dao.PostDAO;
 import model.Post;
@@ -20,7 +18,7 @@ public class PostDAOImpl implements PostDAO {
         String sql = "INSERT INTO posts (user_id, post_content, hashtags, is_pinned) VALUES (?, ?, ?, ?)";
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, post.getUserId());
             ps.setString(2, post.getPostContent());
@@ -42,8 +40,8 @@ public class PostDAOImpl implements PostDAO {
         String sql = "SELECT * FROM posts ORDER BY created_at DESC";
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
+                PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
                 Post post = new Post();
@@ -68,7 +66,7 @@ public class PostDAOImpl implements PostDAO {
         String sql = "SELECT * FROM posts WHERE user_id = ? ORDER BY created_at DESC";
 
         try (java.sql.Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
@@ -89,23 +87,22 @@ public class PostDAOImpl implements PostDAO {
         return posts;
     }
 
-
     @Override
     public boolean updatePost(Post post) {
 
         String sql = """
-        UPDATE posts
-        SET post_content = ?, hashtags = ?
-        WHERE post_id = ? AND user_id = ?
-    """;
+                    UPDATE posts
+                    SET post_content = ?, hashtags = ?
+                    WHERE post_id = ? AND user_id = ?
+                """;
 
         try (java.sql.Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, post.getPostContent());
             ps.setString(2, post.getHashtags());
             ps.setInt(3, post.getPostId());
-            ps.setInt(4, post.getUserId());   // 🔥 ownership check
+            ps.setInt(4, post.getUserId()); // 🔥 ownership check
 
             return ps.executeUpdate() > 0;
 
@@ -115,14 +112,13 @@ public class PostDAOImpl implements PostDAO {
         return false;
     }
 
-
     @Override
     public boolean deletePost(int postId, int userId) {
 
         String sql = "DELETE FROM posts WHERE post_id = ? AND user_id = ?";
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, postId);
             ps.setInt(2, userId);
@@ -134,13 +130,14 @@ public class PostDAOImpl implements PostDAO {
         }
         return false;
     }
+
     @Override
     public int getPostOwnerId(int postId) {
 
         String sql = "SELECT user_id FROM posts WHERE post_id = ?";
 
         try (java.sql.Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, postId);
             ResultSet rs = ps.executeQuery();
@@ -155,14 +152,13 @@ public class PostDAOImpl implements PostDAO {
         return -1; // invalid
     }
 
-
     @Override
     public boolean pinPost(int postId, int userId) {
 
-        String sql = "UPDATE posts SET is_pinned = TRUE WHERE post_id = ? AND user_id = ?";
+        String sql = "UPDATE posts SET is_pinned = 1 WHERE post_id = ? AND user_id = ?";
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, postId);
             ps.setInt(2, userId);

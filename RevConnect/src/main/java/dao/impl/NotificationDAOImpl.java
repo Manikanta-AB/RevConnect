@@ -1,7 +1,5 @@
 package dao.impl;
 
-
-
 import config.DBConnection;
 import dao.NotificationDAO;
 import model.Notification;
@@ -17,12 +15,12 @@ public class NotificationDAOImpl implements NotificationDAO {
     public boolean createNotification(Notification notification) {
 
         String sql = """
-            INSERT INTO notifications (user_id, notification_type, message, is_read)
-            VALUES (?, ?, ?, false)
-        """;
+                    INSERT INTO notifications (user_id, notification_type, message, is_read)
+                    VALUES (?, ?, ?, 0)
+                """;
 
         try (java.sql.Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, notification.getUserId());
             ps.setString(2, notification.getNotificationType());
@@ -43,7 +41,7 @@ public class NotificationDAOImpl implements NotificationDAO {
         String sql = "SELECT * FROM notifications WHERE user_id = ? ORDER BY created_at DESC";
 
         try (java.sql.Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
@@ -67,15 +65,16 @@ public class NotificationDAOImpl implements NotificationDAO {
     @Override
     public int getUnreadCount(int userId) {
 
-        String sql = "SELECT COUNT(*) FROM notifications WHERE user_id = ? AND is_read = false";
+        String sql = "SELECT COUNT(*) FROM notifications WHERE user_id = ? AND is_read = 0";
 
         try (java.sql.Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next()) return rs.getInt(1);
+            if (rs.next())
+                return rs.getInt(1);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,10 +85,10 @@ public class NotificationDAOImpl implements NotificationDAO {
     @Override
     public boolean markAsRead(int notificationId) {
 
-        String sql = "UPDATE notifications SET is_read = true WHERE notification_id = ?";
+        String sql = "UPDATE notifications SET is_read = 1 WHERE notification_id = ?";
 
         try (java.sql.Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, notificationId);
             return ps.executeUpdate() > 0;
@@ -100,4 +99,3 @@ public class NotificationDAOImpl implements NotificationDAO {
         return false;
     }
 }
-
