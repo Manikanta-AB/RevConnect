@@ -142,3 +142,19 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 2026-02-07 10:15:28,822 [INFO] service.UserService - Login attempt for email: mani@gmail.com
 2026-02-09 16:42:30,505 [INFO] service.UserService - Login attempt for email: mani@gmail.com
 2026-02-09 16:56:13,190 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-10 22:52:18,992 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-10 22:56:38,750 [INFO] service.UserService - Login attempt for email: viratkohli@gmail.com
+2026-02-10 22:58:06,943 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-10 23:00:25,666 [INFO] service.UserService - Registering user: ysjagan@gmail.com
+2026-02-10 23:00:42,698 [INFO] service.UserService - Login attempt for email: ysjagan@gmail.com
+2026-02-10 23:03:45,615 [INFO] service.UserService - Registering user: tatasteel@gmail.com
+2026-02-10 23:04:02,133 [INFO] service.UserService - Login attempt for email: tatasteel@gmail.com
+2026-02-10 23:10:06,147 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-10 23:11:21,525 [INFO] service.UserService - Login attempt for email: virat@gmail.com
+2026-02-10 23:12:05,644 [INFO] service.UserService - Login attempt for email: viratkohli@gmail.com
+2026-02-11 09:39:21,097 [INFO] service.UserService - Registering user: mythili@gmail.com
+2026-02-11 09:39:41,384 [INFO] service.UserService - Login attempt for email: mythili@gmail.com
+2026-02-11 09:42:25,280 [INFO] service.UserService - Login attempt for email: mythili@gmail.com
+2026-02-11 09:47:12,976 [INFO] service.UserService - Login attempt for email: tatasteel@gmail.com
+2026-02-11 09:50:17,689 [INFO] service.UserService - Login attempt for email: mythili@gmail.com
+2026-02-11 09:51:18,262 [INFO] service.UserService - Login attempt for email: mythili@gmail.com

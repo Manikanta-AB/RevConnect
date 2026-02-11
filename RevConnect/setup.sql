@@ -1,13 +1,3 @@
--- BEGIN
---    FOR i IN (SELECT table_name FROM user_tables WHERE table_name IN ('USERS', 'POSTS', 'LIKES', 'COMMENTS', 'CONNECTIONS', 'MESSAGES', 'NOTIFICATIONS', 'BLOCKED_USERS', 'FOLLOWERS', 'BUSINESS_CREATOR_PROFILE')) LOOP
---       EXECUTE IMMEDIATE 'DROP TABLE ' || i.table_name || ' CASCADE CONSTRAINTS';
---    END LOOP;
---    FOR i IN (SELECT sequence_name FROM user_sequences WHERE sequence_name IN ('USERS_SEQ', 'POSTS_SEQ', 'COMMENTS_SEQ', 'CONNECTIONS_SEQ', 'MESSAGES_SEQ', 'NOTIFICATIONS_SEQ', 'PROFILE_SEQ')) LOOP
---       EXECUTE IMMEDIATE 'DROP SEQUENCE ' || i.sequence_name;
---    END LOOP;
--- END;
--- /
-
 -- Users Table
 CREATE TABLE users (
     user_id NUMBER PRIMARY KEY,

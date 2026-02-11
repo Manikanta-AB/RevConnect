@@ -1,7 +1,5 @@
 package dao.impl;
 
-
-
 import config.DBConnection;
 import dao.UserDAO;
 import model.User;
@@ -14,8 +12,7 @@ import java.sql.ResultSet;
 
 public class UserDAOImpl implements UserDAO {
 
-    private static final Logger logger =
-            LogManager.getLogger(UserDAOImpl.class);
+    private static final Logger logger = LogManager.getLogger(UserDAOImpl.class);
 
     @Override
     public String getUsernameById(int userId) {
@@ -23,7 +20,7 @@ public class UserDAOImpl implements UserDAO {
         String sql = "SELECT username FROM users WHERE user_id = ?";
 
         try (java.sql.Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
@@ -42,12 +39,12 @@ public class UserDAOImpl implements UserDAO {
     public User getUserForRecovery(String email) {
 
         String sql = """
-        SELECT user_id, security_question, security_answer
-        FROM users WHERE email = ?
-    """;
+                    SELECT user_id, security_question, security_answer
+                    FROM users WHERE email = ?
+                """;
 
         try (java.sql.Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
@@ -60,7 +57,7 @@ public class UserDAOImpl implements UserDAO {
                 return u;
             }
         } catch (Exception e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
         return null;
     }
@@ -68,14 +65,13 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public boolean registerUser(User user) {
         String sql = """
-INSERT INTO users
-(username, email, password, user_type, security_question, security_answer)
-VALUES (?, ?, ?, ?, ?, ?)
-""";
-
+                INSERT INTO users
+                (username, email, password, user_type, security_question, security_answer)
+                VALUES (?, ?, ?, ?, ?, ?)
+                """;
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getEmail());
@@ -100,7 +96,7 @@ VALUES (?, ?, ?, ?, ?, ?)
         String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, email);
             ps.setString(2, password);
@@ -112,6 +108,7 @@ VALUES (?, ?, ?, ?, ?, ?)
                 user.setUserId(rs.getInt("user_id"));
                 user.setUsername(rs.getString("username"));
                 user.setEmail(rs.getString("email"));
+                user.setPassword(rs.getString("password"));
                 user.setUserType(rs.getString("user_type"));
                 user.setFullName(rs.getString("full_name"));
                 user.setBio(rs.getString("bio"));
@@ -127,13 +124,14 @@ VALUES (?, ?, ?, ?, ?, ?)
         }
         return null;
     }
+
     @Override
     public String getUserTypeById(int userId) {
 
         String sql = "SELECT user_type FROM users WHERE user_id = ?";
 
         try (java.sql.Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
@@ -155,7 +153,7 @@ VALUES (?, ?, ?, ?, ?, ?)
         String sql = "UPDATE users SET password = ? WHERE user_id = ?";
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+                PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, newPassword);
             ps.setInt(2, userId);
