@@ -165,3 +165,4 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 2026-02-11 10:28:36,400 [INFO] service.UserService - Login attempt for email: mani@gmail.com
 2026-02-11 12:20:14,996 [INFO] service.UserService - Login attempt for email: mani@gmail.com
 2026-02-11 12:43:11,942 [INFO] service.UserService - Login attempt for email: mani@gmail.com
+2026-02-11 14:26:59,239 [INFO] service.UserService - Login attempt for email: mani@gmail.com
