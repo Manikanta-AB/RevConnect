@@ -4,7 +4,6 @@ import model.CommentView;
 import model.Post;
 import model.User;
 import service.*;
-import util.ProfilePrinter;
 
 import java.util.List;
 import java.util.Scanner;

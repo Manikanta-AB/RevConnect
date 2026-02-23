@@ -1,12 +1,10 @@
-package util;
-
-
+package app.ui;
 
 import model.User;
 
 public class ProfilePrinter {
 
-    public static void printUserProfile(User user,int followers, int following) {
+    public static void printUserProfile(User user, int followers, int following) {
 
         System.out.println("\n========== USER PROFILE ==========");
         System.out.println("Username      : " + user.getUsername());
