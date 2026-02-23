@@ -14,7 +14,7 @@ Console-based social media application that simulates real-world social networki
 
 ### **Technologies Used**
 * Java 21
-* MySQL
+* Oracle Database
 * JDBC
 * Log4j2
 * JUnit 5
